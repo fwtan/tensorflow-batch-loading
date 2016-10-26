@@ -26,8 +26,10 @@ class mini_db(object):
         # Close the path queue (no more additions)
         self.close_path_queue_op = self.path_queue.close()
 
+        # Create an operation that dequeues a single path and returns a processed image
         (idx, img) = self.load_single(image_shape)
 
+        # Create a queue that will contain the images data and their indices
         processed_queue = tf.FIFOQueue(capacity=num_images,
                                        dtypes=[tf.int32, tf.float32],
                                        shapes=[(), image_shape],
