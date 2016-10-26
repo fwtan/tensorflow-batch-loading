@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 
 import os, sys
-import cv2, time
 import numpy as np
 import tensorflow as tf
-import matplotlib.pyplot as plt
 
 
 class mini_db(object):
